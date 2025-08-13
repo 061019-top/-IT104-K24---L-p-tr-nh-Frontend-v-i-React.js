@@ -53,7 +53,7 @@ class SavingAccount extends Account {
   }
 }
 
-// 🧪 Ví dụ sử dụng
+
 const mySavingAcc = new SavingAccount("AC123456", 5000, 0.05);
 
 mySavingAcc.deposit(1000);   // Nạp tiền

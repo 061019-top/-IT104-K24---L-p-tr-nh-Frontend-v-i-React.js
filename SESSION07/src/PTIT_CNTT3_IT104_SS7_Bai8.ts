@@ -51,7 +51,7 @@ class CheckingAccount extends Account {
   }
 }
 
-// 🧪 Ví dụ sử dụng
+
 const myCheckingAcc = new CheckingAccount("CK001", 1000, 500);
 
 myCheckingAcc.deposit(300);    

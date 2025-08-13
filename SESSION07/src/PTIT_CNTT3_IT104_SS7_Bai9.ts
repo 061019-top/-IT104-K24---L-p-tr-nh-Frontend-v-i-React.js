@@ -76,7 +76,7 @@ class User {
   }
 
   public viewFeed(): void {
-    console.log(`📢 Feed của người dùng ${this.id}:`);
+    console.log(` Feed của người dùng ${this.id}:`);
     this.followers.forEach((user) => {
       user.posts.forEach((post) => {
         console.log(`- ${post.content} (by ${user.id})`);
