@@ -1,0 +1,58 @@
+class Account {
+  public id: string;
+  public userName: string;
+  private password: string;
+  public isLogin: boolean;
+  public role: string;
+
+  constructor(id: string, userName: string, password: string, role: string) {
+    this.id = id;
+    this.userName = userName;
+    this.password = password;
+    this.isLogin = false;
+    this.role = role;
+  }
+
+  public login(): void {
+    console.log("Đăng nhập từ lớp Account");
+  }
+
+  public logout(): void {
+    if (this.isLogin) {
+      console.log("Đăng xuất thành công");
+      this.isLogin = false;
+    }
+  }
+}
+
+class UserAcc extends Account {
+  public status: "active" | "banned";
+
+  constructor(
+    id: string,
+    userName: string,
+    password: string,
+    role: string,
+    status: "active" | "banned"
+  ) {
+    super(id, userName, password, role);
+    this.status = status;
+  }
+
+  public login(): void {
+    if (this.status === "active") {
+      this.isLogin = true;
+      console.log("Đăng nhập thành công");
+    } else if (this.status === "banned") {
+      console.log("Tài khoản đã bị khóa");
+    }
+  }
+}
+
+const user1 = new UserAcc("U001", "minh123", "abc123", "user", "active");
+const user2 = new UserAcc("U002", "banUser", "xyz789", "user", "banned");
+
+user1.login();   
+user1.logout();  
+user2.login();
+user2.logout();  
