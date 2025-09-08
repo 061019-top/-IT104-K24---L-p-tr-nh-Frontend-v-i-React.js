@@ -8,62 +8,72 @@ type Product = {
   marked: boolean;
 };
 
-function De003() {
+function De03() {
   const [products, setProducts] = useState<Product[]>([]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [inStock, setInStock] = useState(true);
 
+
+  const saveProducts = (arr: Product[]) => {
+    localStorage.setItem("products", JSON.stringify(arr));
+  };
+
   useEffect(() => {
-    const data = localStorage.getItem("products");
-    if (data) {
-      try {
-        const parsed = JSON.parse(data) as Product[];
+    try {
+      const raw = localStorage.getItem("products");
+      if (raw) {
+        const parsed = JSON.parse(raw) as Product[];
         setProducts(parsed);
-      } catch (err) {
-        console.error("Lỗi parse localStorage products:", err);
-        setProducts([]);
       }
+    } catch (err) {
+      console.log("Không đọc được localStorage:", err);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("products", JSON.stringify(products));
+    if (products.length >= 0) {
+      saveProducts(products);
+    }
   }, [products]);
 
   const addProduct = () => {
-    if (name.trim() === "" || price.trim() === "") {
-      alert("Vui lòng nhập tên và giá.");
+    if (!name || !price) {
+      alert("Nhập tên và giá đi bạn êy!");
       return;
     }
-    const numPrice = Number(price);
-    if (Number.isNaN(numPrice)) {
-      alert("Giá không hợp lệ.");
+    const num = parseInt(price);
+    if (isNaN(num)) {
+      alert("Giá phải là số!");
       return;
     }
-
-    const newProduct: Product = {
-      id: Date.now(),
+    const newItem: Product = {
+      id: Math.floor(Math.random() * 1000000),
       name: name.trim(),
-      price: numPrice,
-      inStock,
+      price: num,
+      inStock: inStock,
       marked: false,
     };
-
-    setProducts((prev) => [...prev, newProduct]);
+    const newArr = [...products, newItem];
+    setProducts(newArr);
     setName("");
     setPrice("");
-    setInStock(true);
+    setInStock(false); 
   };
 
   const toggleMark = (id: number) => {
-    setProducts((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, marked: !p.marked } : p))
-    );
+    const copy = [...products];
+    copy.forEach((p) => {
+      if (p.id === id) {
+        p.marked = !p.marked;
+      }
+    });
+    setProducts(copy);
   };
 
   const deleteProduct = (id: number) => {
-    setProducts((prev) => prev.filter((p) => p.id !== id));
+    const filtered = products.filter((p) => !(p.id === id));
+    setProducts(filtered);
   };
 
   return (
@@ -192,4 +202,4 @@ function De003() {
   );
 }
 
-export default De003;
+export default De03;
