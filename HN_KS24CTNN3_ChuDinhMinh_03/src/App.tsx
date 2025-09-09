@@ -1,6 +1,6 @@
 import React from 'react'
 import De03 from './components/De03'
-
+import './App.css'
 export default function App() {
   return (
     <div>
