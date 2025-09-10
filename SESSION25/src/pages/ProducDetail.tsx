@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function App() {
+export default function ProducDetail() {
   return (
     <div>
-      
+      xem chi tiết 
     </div>
   )
 }
