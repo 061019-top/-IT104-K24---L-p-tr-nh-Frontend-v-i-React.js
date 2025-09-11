@@ -1,0 +1,12 @@
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function UserManager() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 300);
+  },[location]);
+  return <div>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis at fugiat nulla quis laborum ipsa quos sit impedit. Dolorem illo perferendis, sint ratione voluptate odit exercitationem id aliquid, officia non autem veniam cum sed dolores? Impedit vero distinctio odio, pariatur placeat similique doloribus atque porro necessitatibus sint eligendi? Asperiores amet iure repudiandae, molestiae ad nobis harum ullam impedit quaerat rem atque architecto ipsum, natus doloribus suscipit beatae sit ipsa sapiente debitis? Amet doloremque dolor debitis consequuntur, nesciunt quisquam enim nam inventore magni labore libero tempore quaerat fuga repellendus ratione reprehenderit vero omnis assumenda ab eos accusamus odio culpa nobis illum? Facere, dicta. Quo corrupti nulla quam ducimus sit, corporis molestias dolor tempora ipsam fuga nemo exercitationem? Cum, molestiae cupiditate, repudiandae delectus eos consequatur accusantium ipsa et in, velit provident. Quis, eius, ad iure aliquam repellendus aspernatur dolorum nihil qui voluptatem odit, vitae explicabo quos nisi eligendi! Nobis eaque veniam iste alias in eveniet animi, corrupti consequuntur provident dolore magnam laboriosam ducimus doloremque nam sunt nulla quo dolor, optio ullam! Iure autem a totam omnis impedit et perferendis animi asperiores vitae consectetur soluta quaerat, adipisci sed necessitatibus quibusdam odit fugiat tempora voluptate doloremque nulla, voluptatum odio? In quisquam optio molestiae, ipsum ullam quasi reprehenderit natus. Minima libero, error nesciunt ullam consequatur sunt neque nemo obcaecati nihil saepe, aperiam sint labore. Libero, perferendis dolore esse perspiciatis quisquam quas doloremque tenetur, error alias ipsa ab possimus eius quaerat ex quibusdam tempore assumenda autem nesciunt sint! Doloribus minima sequi atque voluptatibus officia autem aliquid laborum, obcaecati suscipit cumque aliquam, voluptas culpa quis est natus qui assumenda hic id eaque exercitationem? Repellendus ex incidunt velit, vel numquam est accusamus corrupti laborum consequatur adipisci asperiores eius quia consequuntur itaque necessitatibus ut quidem eum qui officia nihil reprehenderit, deserunt quis ipsum corporis? Deleniti veritatis officia dolor magni?
+  </div>;
+}
