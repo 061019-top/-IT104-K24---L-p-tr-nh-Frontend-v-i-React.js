@@ -1,0 +1,1 @@
+export const api_getAllUser="http://localhost:8000/users"
