@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "minh",
+      "age": 10,
+      "grade": "10A1"
+    },
+    {
+      "id": 2,
+      "name": "minh thu ",
+      "age": 11,
+      "grade": "10A2"
+    },
+   {
+      "id": 3,
+      "name": "minh hang",
+      "age": 18,
+      "grade": "10A3"
+    }
+  ]
+}
